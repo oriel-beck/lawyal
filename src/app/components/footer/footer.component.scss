@@ -1,0 +1,13 @@
+footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+
+    // default light mode
+    background-color: rgb(133, 89, 245);
+
+    // dark mode
+    &.dark {
+        background-color: rgb(164, 99, 169);
+    }
+}

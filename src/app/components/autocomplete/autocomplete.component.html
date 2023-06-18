@@ -1,0 +1,12 @@
+<div class="autocomplete" [ngClass]="mode" *ngIf="searching">
+    <ng-container *ngIf="searchState as state">
+        <ul class="autocomplete-list" *ngIf="(state?.results?.length ?? 0) > 0">
+            <li *ngFor="let result of state.results" (click)="selected.emit(result)">
+                {{ result.location }}
+            </li>
+        </ul>
+        <div class="loading" *ngIf="!!state.loading && state?.results?.length === 0">Loading...</div>
+        <div class="no-results" *ngIf="!state.loading && state?.results?.length === 0">No results available.</div>
+    </ng-container>
+
+</div>

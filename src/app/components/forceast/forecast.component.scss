@@ -1,0 +1,57 @@
+.forecast {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+
+        .forecast-section {
+            margin-bottom: 10px;
+        }
+    }
+
+    .forecast-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2%;
+        background-color: rgba(93, 164, 222, 0.5);
+        min-width: 100px;
+
+        &.dark {
+            background-color: #400b95;
+            color: #ffffff;
+        }
+
+        padding: 1em;
+        border-radius: 5px;
+
+        @media (min-width: 600px) {
+            width: 100%;
+        }
+
+        @media (max-width: 900px) {
+            flex: 2;
+        }
+
+        .day {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .weather-icon img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+        .temperature {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .weather-status {
+            font-size: 12px;
+        }
+    }
+}

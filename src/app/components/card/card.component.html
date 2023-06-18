@@ -1,0 +1,27 @@
+<div class="weather-card" [ngClass]="mode">
+    <span class="star-icon" (click)="toggleFavorite.emit(weatherState?.result)">
+        <svg *ngIf="!favorite; else unfavorite" width="40" height="39" viewBox="0 0 40 39" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10 24.2784L7.63932 38.0423L20 31.5439L32.3607 38.0423L30 24.2784L40 14.5309L26.1803 12.5227L20 0L13.8197 12.5227L0 14.5309L10 24.2784ZM26.3139 23.0807L27.8044 31.7709L20.0001 27.668L12.1958 31.7709L13.6863 23.0807L7.37247 16.9263L16.0979 15.6584L20.0001 7.75178L23.9022 15.6584L32.6277 16.9263L26.3139 23.0807Z"
+                fill="#FFBE17" />
+        </svg>
+        <ng-template #unfavorite>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M11.4189 13.7758L2.15487 4.51183L4.51189 2.15481L37.8452 35.4881L35.4882 37.8452L31.2171 33.5741L32.01 38.197L20 31.883L7.99008 38.197L10.2838 24.8237L0.567505 15.3526L11.4189 13.7758ZM27.135 29.4919L27.5829 32.1036L20 28.117L12.4172 32.1036L13.8654 23.6599L7.73071 17.6801L14.3599 16.7168L27.135 29.4919ZM32.2694 17.6801L28.4383 21.4145L30.7955 23.7717L39.4326 15.3526L26.005 13.4015L20 1.23407L16.1199 9.09614L18.6087 11.585L20 8.76591L23.7915 16.4482L32.2694 17.6801Z"
+                    fill="#FFBE17" />
+            </svg>
+        </ng-template>
+    </span>
+    <div class="top-section">
+        <div class="weather-details">
+            <div class="location">{{ weatherState?.result?.location }}</div>
+            <div class="weather-state">{{ weatherState?.weather?.WeatherText }}</div>
+            <div class="current-degrees">{{ getTemp() }}&deg;{{ temp }}</div>
+        </div>
+        <div class="weather-icon">
+            <img [src]="getImage()" alt="Weather Icon" />
+        </div>
+    </div>
+</div>

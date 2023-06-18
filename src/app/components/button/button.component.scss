@@ -1,0 +1,26 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+
+    // default light mode
+    background-color: #AEBDCA;
+    color: #333333;
+
+    // dark mode
+    &.dark {
+        background-color: #484848;
+        color: #AEBDCA;
+    }
+
+    .icon {
+        margin-left: 10px;
+        width: 20px;
+        height: 20px;
+    }
+}

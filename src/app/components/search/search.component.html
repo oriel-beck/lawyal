@@ -1,0 +1,14 @@
+<div class="search-bar" [ngClass]="mode">
+    <input [formControl]="searchControl" class="search-input" [ngClass]="mode" type="text"
+        placeholder="Search a location..." (input)="inputChanged()" />
+    <span class="search-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M16.6667 30C9.30287 30 3.33333 24.0305 3.33333 16.6667C3.33333 9.30286 9.30287 3.33333 16.6667 3.33333C24.0305 3.33333 30 9.30286 30 16.6667C30 19.7478 28.9549 22.5849 27.1998 24.8427L36.1785 33.8215L33.8215 36.1785L24.8427 27.1998C22.5849 28.9549 19.7479 30 16.6667 30ZM26.6667 16.6667C26.6667 22.1895 22.1895 26.6667 16.6667 26.6667C11.1438 26.6667 6.66667 22.1895 6.66667 16.6667C6.66667 11.1438 11.1438 6.66666 16.6667 6.66666C22.1895 6.66666 26.6667 11.1438 26.6667 16.6667Z"
+                fill="black" />
+        </svg>
+    </span>
+</div>
+<div *ngIf="!searchControl.valid" class="error">
+    <span>This is not valid</span>
+</div>

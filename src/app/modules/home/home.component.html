@@ -1,0 +1,16 @@
+<div class="main-content" [ngClass]="mode$ | async">
+    <app-search [mode]="mode$ | async" class="search-bar" (search)="search($event)" #appSearch></app-search>
+    <app-autocomplete *ngIf="appSearch.searchControl.valid" [mode]="mode$ | async" [searchState]="searchState$ | async"
+        [searching]="!!appSearch.searchControl.value" (selected)="selected($event)"></app-autocomplete>
+
+    <ng-container *ngIf="!!(weatherState$ | async)?.weather">
+        <div class="weather-section">
+            <app-card [mode]="mode$ | async" [weatherState]="weatherState$ | async" [temp]="temp$ | async"
+                [favorite]="currentFavorite$ | async" (toggleFavorite)="toggleFavorite($event)"></app-card>
+        </div>
+
+        <div class="forecast-section">
+            <app-forecast [mode]="mode$ | async" [forecast]="forecast$ | async" [temp]="temp$ | async"></app-forecast>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,18 @@
+.wrapper {
+    height: 100%;
+    min-height: 100vh;
+
+    // default light mode
+    background-color: #797CC9;
+
+    // dark mode
+    &.dark {
+        background-color: #312531;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}

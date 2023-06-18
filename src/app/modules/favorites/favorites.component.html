@@ -1,0 +1,14 @@
+<div class="grid" *ngIf="!!(favorites$ | async)?.length; else nofavorites">
+    <ng-container *ngFor="let favorite of favorites$ | async">
+        <ng-container *ngIf="favorite | async as fav">
+            <app-card class="card" (click)="showWeather(fav.result)" [favorite]="true" [mode]="mode$ | async"
+                [temp]="temp$ | async" [weatherState]="fav" (toggleFavorite)="toggleFavorite(fav.result)"></app-card>
+        </ng-container>
+
+    </ng-container>
+</div>
+<ng-template #nofavorites>
+    <div class="wrapper" [ngClass]="mode$ | async">
+        <h1>You have no favorites, get some at <a [routerLink]="['/home']">Home</a></h1>
+    </div>
+</ng-template>

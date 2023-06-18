@@ -1,0 +1,10 @@
+<div class="forecast">
+    <div *ngFor="let cast of forecast?.DailyForecasts" class="forecast-section" [ngClass]="mode">
+        <div class="day">{{ getDay(cast.Date) }}</div>
+        <div class="weather-icon">
+            <img [src]="getImage(cast.Day.Icon)" alt="Weather Icon">
+        </div>
+        <div class="temperature">{{getMinTemp(cast)}}&deg; | {{getMaxTemp(cast)}}&deg;</div>
+        <div class="weather-status">{{cast.Day.IconPhrase}}</div>
+    </div>
+</div>

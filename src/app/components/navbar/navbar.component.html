@@ -1,0 +1,13 @@
+<nav class="navbar" [ngClass]="mode">
+    <div class="left">
+        <app-circle-button class="button" [mode]="mode!" [title]="modeTitle"
+            (clicked)="toggleMode.emit()"></app-circle-button>
+        <app-circle-button [mode]="mode!" [letter]="temp!" [title]="degreeTitle"
+            (clicked)="toggleTemp.emit()"></app-circle-button>
+    </div>
+
+    <div class="right">
+        <app-button [label]="buttonLabel" [icon]="buttonIcon" [mode]="mode!"
+            (clicked)="navigateTo.emit($event)"></app-button>
+    </div>
+</nav>

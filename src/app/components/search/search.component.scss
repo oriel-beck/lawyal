@@ -1,0 +1,40 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #7895B2;
+    border-radius: 20px;
+    padding: 8px;
+
+    &.dark {
+        background-color: #7f20fc;
+    }
+
+    .search-input {
+        flex: 1;
+        margin: 5px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: #ffffff;
+
+        &::placeholder {
+            color: #4c7dad;
+        }
+
+        &.dark::placeholder {
+            color: #7fa69e
+        }
+    }
+
+    .search-button {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+}
+
+.error {
+    color: rgb(218, 84, 84);
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,20 @@
+<button class="button" [ngClass]="mode" (click)="clicked.emit(icon!)" role="link">
+    <span>{{ label }}</span>
+    <span aria-hidden="true" class="icon">
+        <svg *ngIf="icon === 'favorites'" width="21" height="20" viewBox="0 0 30 30" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M6.17022 14.8942L4.794 22.9182L12 19.1298L19.206 22.9182L17.8297 14.8942L23.6595 9.21159L15.603 8.04091L12 0.740448L8.39699 8.04091L0.340454 9.21159L6.17022 14.8942ZM15.6808 14.196L16.5497 19.2622L12 16.8702L7.45026 19.2622L8.31918 14.196L4.63838 10.6081L9.72512 9.86892L12 5.25955L14.2748 9.86892L19.3616 10.6081L15.6808 14.196Z"
+                fill="#FFC700" />
+        </svg>
+        <!-- TODO: choose color (fill) -->
+        <svg *ngIf="icon === 'home'" width="16" height="16" viewBox="0 0 23 23" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g id="24 / basic / home">
+                <path id="icon" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M5.88867 10L11.89 3.99867L17.8913 10H17.89V20H5.89001V10H5.88867ZM3.89001 11.9987L2.4132 13.4755L1 12.0623L10.477 2.58529C11.2574 1.8049 12.5226 1.8049 13.303 2.58529L22.78 12.0623L21.3668 13.4755L19.89 11.9987V20C19.89 21.1046 18.9946 22 17.89 22H5.89001C4.78545 22 3.89001 21.1046 3.89001 20V11.9987Z"
+                    fill="black" />
+            </g>
+        </svg>
+    </span>
+</button>

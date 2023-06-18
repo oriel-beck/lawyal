@@ -1,0 +1,1 @@
+export const getWeatherImage = (num: number) => `https://developer.accuweather.com/sites/default/files/${String(num).padStart(2, '0')}-s.png`;
